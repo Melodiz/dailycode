@@ -1,5 +1,4 @@
-s = 0
-for i in range(1, 3*10**4+1):
-    s+=i
+data = list(map(int, open('python quick/input.txt').readline().split()))
 
-print(s/10**8)
+sl = {'1': 31, '2': 29, '3': 31, '4': 30, 
+      }
