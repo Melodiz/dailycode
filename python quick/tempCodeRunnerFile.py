@@ -1,6 +1,8 @@
-ans = 0
+arr = [3,1,2,4,5]
 
-for n in range(1, 1000):
-    ans += (-1)**(n-1)/n
+res = 0
+for i in range(len(arr)-1, 0 -1):
+    print(arr[i])
 
-print(ans)
+
+# print(res)

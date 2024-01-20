@@ -1,6 +1,5 @@
-ans = 0
+s = 0
+for i in range(1, 3*10**4+1):
+    s+=i
 
-for n in range(1, 100000):
-    ans += (-1)**(n-1)/n
-
-print(ans)
+print(s/10**8)

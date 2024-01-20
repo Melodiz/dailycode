@@ -1,23 +1,34 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
-
-// int rec(int numerator, int denominator, int result, int n)
-// {
-//     return 0;
-// }
-
-int result;
-
-void rec(int n)
-{
-    (result = 1, n <= 1) || (rec(n - 1), result -= 1 / n, n % 2 == 0) || (rec(n - 1), result += 1 / n, n % 2 == 1);
-}
-
+// 2:50
 int main()
 {
-    int n;
+    short n;
+    short m;
+
     cin >> n;
-    rec(n); // call the func
-    cout << result << endl;
-    return 0;
+    cin >> m;
+
+    for (short i = 1; i < n + 1; i++)
+    {
+        cout << "" << i;
+    }
+    cout << endl;
+
+    for (short i = 1; i < n + 1; i++)
+    {
+        for (short j = 0; j < n + 1; j++)
+        {
+            if (j == 0)
+            {
+                cout << i;
+            }
+            else
+            {
+                cout << setw(5) << (i * j) % m;
+            }
+        }
+        cout << endl;
+    }
 }
