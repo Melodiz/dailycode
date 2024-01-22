@@ -1,0 +1,15 @@
+[Unit]
+Description=HSE_BI_bot
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/my_bots/hse_project_bot
+ExecStart=/root/my_bots/hse_project_bot/hse_venv/bin/python3 /root/my_bots/hse_project_bot/app.py
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
