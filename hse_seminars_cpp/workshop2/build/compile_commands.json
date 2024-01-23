@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem1_hello.dir/problem1_hello/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem1_hello/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem1_hello/main.cpp",
+  "output": "CMakeFiles/problem1_hello.dir/problem1_hello/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem2_len_of_cstr.dir/problem2_len_of_cstr/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem2_len_of_cstr/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem2_len_of_cstr/main.cpp",
+  "output": "CMakeFiles/problem2_len_of_cstr.dir/problem2_len_of_cstr/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem3_getline.dir/problem3_getline/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem3_getline/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem3_getline/main.cpp",
+  "output": "CMakeFiles/problem3_getline.dir/problem3_getline/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem4_str_funcs.dir/problem4_str_funcs/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem4_str_funcs/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem4_str_funcs/main.cpp",
+  "output": "CMakeFiles/problem4_str_funcs.dir/problem4_str_funcs/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem5_print_ascii.dir/problem5_print_ascii/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem5_print_ascii/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem5_print_ascii/main.cpp",
+  "output": "CMakeFiles/problem5_print_ascii.dir/problem5_print_ascii/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem6_str_indices.dir/problem6_str_indices/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem6_str_indices/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem6_str_indices/main.cpp",
+  "output": "CMakeFiles/problem6_str_indices.dir/problem6_str_indices/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem7_mult_table_2.dir/problem7_mult_table_2/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem7_mult_table_2/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem7_mult_table_2/main.cpp",
+  "output": "CMakeFiles/problem7_mult_table_2.dir/problem7_mult_table_2/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/Desktop/workshop2/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem8_enh_mult_table_2.dir/problem8_enh_mult_table_2/main.cpp.o -c /Users/melodiz/Desktop/workshop2/problem8_enh_mult_table_2/main.cpp",
+  "file": "/Users/melodiz/Desktop/workshop2/problem8_enh_mult_table_2/main.cpp",
+  "output": "CMakeFiles/problem8_enh_mult_table_2.dir/problem8_enh_mult_table_2/main.cpp.o"
+}
+]
