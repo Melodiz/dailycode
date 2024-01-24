@@ -8,3 +8,6 @@ A demo project prepared for the Higher School of Economics by the first-year stu
 ```
 streamlit run streamlit.py
 ```
+But note that it requires dataframes to be loaded to work properly. Cause add them into .gitignore file
+[link to github repo with dataframes](https://github.com/Melodiz/hseBI_streamlit/tree/main/dataset)
+[link to yandex disk](https://disk.yandex.ru/d/qHxAw4bnxlbuLA)
