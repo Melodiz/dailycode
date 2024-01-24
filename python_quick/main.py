@@ -1,4 +1,3 @@
-data = list(map(int, open('python quick/input.txt').readline().split()))
+import math
 
-sl = {'1': 31, '2': 29, '3': 31, '4': 30, 
-      }
+print(math.log2(math.factorial(1000)))
