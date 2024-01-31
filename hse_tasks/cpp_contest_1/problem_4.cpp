@@ -1,16 +1,16 @@
 #include <iostream>
-using namespace std;
 
 int main()
 {
+    using namespace std;
     double ans = 0;
-    int n;
+    size_t n;
     short sign = 1;
 
     cin >> n;
-    for (float i = 1; i < n+1; i++)
+    for (size_t i = 1; i < n+1; i++)
     {
-        ans += (1/i)*sign;
+        ans += (1./i)*sign;
         sign *= -1;
     }
     

@@ -1,26 +1,19 @@
 #include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
+#include <cmath>
 
 int main()
 {
-    int n;
-    cin >> n;
-    cin.ignore();
+    int v;
+    std::cin >> v;
 
-    int ans = 0;
+    double res = 0.0;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= v; i++)
     {
-        short a,b,c;
-        cin >> a >> b >> c;
-        if (a+b+c>=2)
-        {
-            ans +=1;
-        }
+        res += (1.0/i) * pow(-1, i + 1);
     }
-    cout << ans << endl;
+
+    std::cout << res << std::endl;
 
     return 0;
 }
