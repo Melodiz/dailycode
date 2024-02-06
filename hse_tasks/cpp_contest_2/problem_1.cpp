@@ -22,7 +22,7 @@ int main()
 
 bool check_lengh(string data)
 {
-    if (data.length() < 15 && data.length() > 7)
+    if (data.length() > 7 && data.length() < 15)
     {
         return true;
     }
@@ -43,27 +43,27 @@ bool check_symbols(string data)
 
 bool check_groups(string data)
 {
-    bool a, b, c, d = false;
+    short a, b, c, d = 0;
     for (size_t i = 0; i < data.length(); i++)
     {
-        if (data[i] <= 0x5A && data[i] >= 0x41)
+        if (int(data[i]) > 64 && int(data[i]) < 91)
         {
-            a = true;
+            a = 1;
         }
-        else if (data[i] <= 0x39 && data[i] >= 0x30)
+        else if (int(data[i]) > 96 && int(data[i]) < 123)
         {
-            b = true;
+            b = 1;
         }
-        else if (data[i] <= 0x7A && data[i] >= 0x61)
+        else if (int(data[i]) > 47 && int(data[i] < 58))
         {
-            c = true;
+            c = 1;
         }
         else
         {
-            d = true;
+            d = 1;
         }
     }
-    if (a + b + c + d >= 3)
+    if ((a + b + c + d) > 2)
     {
         return true;
     }
