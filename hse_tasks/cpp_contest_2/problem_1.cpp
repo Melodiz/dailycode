@@ -9,7 +9,7 @@ bool check_groups(string data);
 int main()
 {
     string input;
-    cin >> input;
+    getline(std::cin, input);
 
     if (check_lengh(input) && check_symbols(input) && check_groups(input))
     {
@@ -24,6 +24,7 @@ bool check_lengh(string data)
 {
     if (data.length() > 7 && data.length() < 15)
     {
+        //std::cout << "length checked" << std::endl;
         return true;
     }
     return false;
@@ -38,12 +39,13 @@ bool check_symbols(string data)
             return false;
         }
     }
+    //std::cout << "Symbols checked" << std::endl;
     return true;
 }
 
 bool check_groups(string data)
 {
-    short a, b, c, d = 0;
+    int a = 0, b = 0, c = 0, d = 0;
     for (size_t i = 0; i < data.length(); i++)
     {
         if (int(data[i]) > 64 && int(data[i]) < 91)
@@ -65,6 +67,7 @@ bool check_groups(string data)
     }
     if ((a + b + c + d) > 2)
     {
+        //std::cout << "Uniquness check" << std::endl;
         return true;
     }
     return false;
