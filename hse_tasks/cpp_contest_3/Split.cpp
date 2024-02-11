@@ -13,7 +13,7 @@ std::vector<std::string> split(const std::string &str, char delimiter)
     {
         if (str[i] == delimiter)
         {
-            ans.push_back(block + ' ');
+            ans.push_back(block);
             block = "";
         }
         else
