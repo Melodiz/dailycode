@@ -5,9 +5,9 @@
 #include <tuple>
 using namespace std;
 
-void fileStatistic(const string fileName, int&lines, int&words, int&letters);
+void fileStatistic(const string fileName, int &lines, int &words, int &letters);
 
-void fileStatistic(const string fileName, int&lines, int&words, int&letters)
+void fileStatistic(const string fileName, int &lines, int &words, int &letters)
 {
     ifstream in(fileName);
     char ch;
@@ -21,14 +21,19 @@ void fileStatistic(const string fileName, int&lines, int&words, int&letters)
             ++letters;
             flag = true;
         }
-        else if ((ch == ' ' || ch  == '\n') && flag)
+        else
         {
-            ++words;
-            flag = false;
+            if (flag)
+            {
+                ++words;
+                flag = false;
+            }
         }
+
         if (ch == '\n')
         {
             ++lines;
+            // flag = false;
         }
     }
     in.close();
