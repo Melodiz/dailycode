@@ -6,16 +6,32 @@
 ///
 /// TASK DESCRIPTION
 ///
-/// Write a program that takes an integer n as input and performs bitwise complement
-/// (inverts all bits) on it. Print the resulting number in binary and decimal forms.
+/// Write a program that takes an integer n ans the position of bit (k)
+// as input and performs bitwise complement
+/// (inverts only one bit on k's possition) on it.
+//  Print the resulting number in binary and decimal forms.
 ///
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <cstdint>
+#include <cassert>
+
+uint8_t inverseKBit(uint8_t n, uint8_t k);
 
 int main()
 {
-    // Your code here
+    assert(inverseKBit(0xA5, 0) == 0xA4);
+    assert(inverseKBit(0xA5, 1) == 0xA7);
+    assert(inverseKBit(0xA5, 2) == 0xA1);
 
     return 0;
+}
+
+uint8_t inverseKBit(uint8_t n, uint8_t k)
+{
+
+    uint8_t mask = (0x1 << k);
+
+    return n ^ mask;
 }

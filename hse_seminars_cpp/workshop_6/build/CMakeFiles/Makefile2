@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /Users/melodiz/code/hse_seminars_cpp/workshop_6/build
 # The main recursive "all" target.
 all: CMakeFiles/problem1_invert_bit.dir/all
 all: CMakeFiles/problem2_count_bits.dir/all
+all: CMakeFiles/problem3_invert_bits.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,6 +75,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/problem1_invert_bit.dir/clean
 clean: CMakeFiles/problem2_count_bits.dir/clean
+clean: CMakeFiles/problem3_invert_bits.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -127,6 +129,32 @@ problem2_count_bits: CMakeFiles/problem2_count_bits.dir/rule
 CMakeFiles/problem2_count_bits.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem2_count_bits.dir/build.make CMakeFiles/problem2_count_bits.dir/clean
 .PHONY : CMakeFiles/problem2_count_bits.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/problem3_invert_bits.dir
+
+# All Build rule for target.
+CMakeFiles/problem3_invert_bits.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles --progress-num=5,6 "Built target problem3_invert_bits"
+.PHONY : CMakeFiles/problem3_invert_bits.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/problem3_invert_bits.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/problem3_invert_bits.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles 0
+.PHONY : CMakeFiles/problem3_invert_bits.dir/rule
+
+# Convenience name for target.
+problem3_invert_bits: CMakeFiles/problem3_invert_bits.dir/rule
+.PHONY : problem3_invert_bits
+
+# clean rule for target.
+CMakeFiles/problem3_invert_bits.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/clean
+.PHONY : CMakeFiles/problem3_invert_bits.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

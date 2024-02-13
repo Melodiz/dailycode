@@ -10,5 +10,11 @@
   "command": "/usr/bin/clang++   -g -O0 -Wall -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem2_count_bits.dir/problem2_count_bits/main.cpp.o -c /Users/melodiz/code/hse_seminars_cpp/workshop_6/problem2_count_bits/main.cpp",
   "file": "/Users/melodiz/code/hse_seminars_cpp/workshop_6/problem2_count_bits/main.cpp",
   "output": "CMakeFiles/problem2_count_bits.dir/problem2_count_bits/main.cpp.o"
+},
+{
+  "directory": "/Users/melodiz/code/hse_seminars_cpp/workshop_6/build",
+  "command": "/usr/bin/clang++   -g -O0 -Wall -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem3_invert_bits.dir/problem3_invert_bits/main.cpp.o -c /Users/melodiz/code/hse_seminars_cpp/workshop_6/problem3_invert_bits/main.cpp",
+  "file": "/Users/melodiz/code/hse_seminars_cpp/workshop_6/problem3_invert_bits/main.cpp",
+  "output": "CMakeFiles/problem3_invert_bits.dir/problem3_invert_bits/main.cpp.o"
 }
 ]

@@ -16,4 +16,5 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 #### the list of targets ####
 add_executable(problem1_invert_bit                problem1_invert_bit/main.cpp)
 add_executable(problem2_count_bits                problem2_count_bits/main.cpp)
+add_executable(problem3_invert_bits     problem3_invert_bits/main.cpp)
 

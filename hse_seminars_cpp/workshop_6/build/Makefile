@@ -142,6 +142,19 @@ problem2_count_bits/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem2_count_bits.dir/build.make CMakeFiles/problem2_count_bits.dir/build
 .PHONY : problem2_count_bits/fast
 
+#=============================================================================
+# Target rules for targets named problem3_invert_bits
+
+# Build rule for target.
+problem3_invert_bits: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 problem3_invert_bits
+.PHONY : problem3_invert_bits
+
+# fast build rule for target.
+problem3_invert_bits/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/build
+.PHONY : problem3_invert_bits/fast
+
 problem1_invert_bit/main.o: problem1_invert_bit/main.cpp.o
 .PHONY : problem1_invert_bit/main.o
 
@@ -190,6 +203,30 @@ problem2_count_bits/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem2_count_bits.dir/build.make CMakeFiles/problem2_count_bits.dir/problem2_count_bits/main.cpp.s
 .PHONY : problem2_count_bits/main.cpp.s
 
+problem3_invert_bits/main.o: problem3_invert_bits/main.cpp.o
+.PHONY : problem3_invert_bits/main.o
+
+# target to build an object file
+problem3_invert_bits/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/problem3_invert_bits/main.cpp.o
+.PHONY : problem3_invert_bits/main.cpp.o
+
+problem3_invert_bits/main.i: problem3_invert_bits/main.cpp.i
+.PHONY : problem3_invert_bits/main.i
+
+# target to preprocess a source file
+problem3_invert_bits/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/problem3_invert_bits/main.cpp.i
+.PHONY : problem3_invert_bits/main.cpp.i
+
+problem3_invert_bits/main.s: problem3_invert_bits/main.cpp.s
+.PHONY : problem3_invert_bits/main.s
+
+# target to generate assembly for a file
+problem3_invert_bits/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/problem3_invert_bits.dir/build.make CMakeFiles/problem3_invert_bits.dir/problem3_invert_bits/main.cpp.s
+.PHONY : problem3_invert_bits/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,12 +237,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... problem1_invert_bit"
 	@echo "... problem2_count_bits"
+	@echo "... problem3_invert_bits"
 	@echo "... problem1_invert_bit/main.o"
 	@echo "... problem1_invert_bit/main.i"
 	@echo "... problem1_invert_bit/main.s"
 	@echo "... problem2_count_bits/main.o"
 	@echo "... problem2_count_bits/main.i"
 	@echo "... problem2_count_bits/main.s"
+	@echo "... problem3_invert_bits/main.o"
+	@echo "... problem3_invert_bits/main.i"
+	@echo "... problem3_invert_bits/main.s"
 .PHONY : help
 
 
