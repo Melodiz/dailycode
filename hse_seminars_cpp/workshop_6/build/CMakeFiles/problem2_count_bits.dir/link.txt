@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -O0 -Wall -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/problem2_count_bits.dir/problem2_count_bits/main.cpp.o -o problem2_count_bits 

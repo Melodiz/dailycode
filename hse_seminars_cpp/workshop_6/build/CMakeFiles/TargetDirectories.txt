@@ -1,0 +1,4 @@
+/Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles/problem1_invert_bit.dir
+/Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles/problem2_count_bits.dir
+/Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles/edit_cache.dir
+/Users/melodiz/code/hse_seminars_cpp/workshop_6/build/CMakeFiles/rebuild_cache.dir
