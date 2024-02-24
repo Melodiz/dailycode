@@ -23,7 +23,7 @@ int main()
 
     transformArray(data, sizeof(data) / sizeof(data[0]), transform);
 
-    for (int i = 0; i < sizeof(data) / sizeof(data[0]); i++)
+    for (int i = 0; i < data.size()); i++)
     {
         cout << data[i] << " ";
     }
