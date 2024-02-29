@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -O0 -Wall -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/task03.dir/task03/main.cpp.o -o task03 
