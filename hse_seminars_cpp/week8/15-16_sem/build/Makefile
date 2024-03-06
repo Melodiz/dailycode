@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem
+CMAKE_SOURCE_DIR = /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build
+CMAKE_BINARY_DIR = /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build/CMakeFiles /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/build/CMakeFiles /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

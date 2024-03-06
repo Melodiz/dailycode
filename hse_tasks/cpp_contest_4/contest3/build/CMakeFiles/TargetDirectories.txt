@@ -1,0 +1,3 @@
+/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3/build/CMakeFiles/contest3.dir
+/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3/build/CMakeFiles/edit_cache.dir
+/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3/build/CMakeFiles/rebuild_cache.dir

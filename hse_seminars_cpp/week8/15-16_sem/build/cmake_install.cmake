@@ -1,4 +1,4 @@
-# Install script for directory: /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem
+# Install script for directory: /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

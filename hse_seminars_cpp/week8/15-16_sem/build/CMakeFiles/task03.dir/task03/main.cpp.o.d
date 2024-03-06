@@ -1,5 +1,5 @@
 CMakeFiles/task03.dir/task03/main.cpp.o: \
-  /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/task03/main.cpp \
+  /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/task03/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__config \

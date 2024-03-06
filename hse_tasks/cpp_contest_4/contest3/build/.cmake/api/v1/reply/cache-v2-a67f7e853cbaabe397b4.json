@@ -2,42 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "11_12_sem_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build"
-		},
-		{
-			"name" : "11_12_sem_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "11_12_sem_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem"
-		},
-		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -91,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build"
+			"value" : "/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -191,10 +155,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/clang++"
 		},
 		{
@@ -443,7 +407,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build/CMakeFiles/pkgRedirects"
+			"value" : "/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem"
+			"value" : "/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -787,7 +751,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "11_12_sem"
+			"value" : "contest3"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1084,6 +1048,42 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
+		},
+		{
+			"name" : "contest3_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3/build"
+		},
+		{
+			"name" : "contest3_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "contest3_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/melodiz/code/hse_tasks/cpp_contest_4/contest3"
 		}
 	],
 	"kind" : "cache",

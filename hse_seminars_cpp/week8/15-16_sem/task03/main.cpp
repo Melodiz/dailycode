@@ -38,6 +38,7 @@ struct Student
     int age;
     double grade;
 
+    // Student()
     // friend std::istream& operator>>(std::istream& in, Student& student) {
     //     in >> student.name >> student.age >> student.grade;
     //     return in;
@@ -69,8 +70,8 @@ void test01()
     std::cout << mary;
     std::cout << std::endl;
 
-    // Student john;
-    // std::cout << john << '\n';
+    Student john;
+    std::cout << john << '\n';
     // std::cin >> john;
     // std::cout << john << '\n';
 }
@@ -121,6 +122,6 @@ int main()
 
     // writeRecordsToFile("updated_students.txt", students);
     test01();
-    test02();
+    // test02();
     return 0;
 }

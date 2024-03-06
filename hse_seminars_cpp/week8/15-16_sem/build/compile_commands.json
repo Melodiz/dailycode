@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/build",
-  "command": "/usr/bin/clang++   -g -O0 -Wall -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/task03.dir/task03/main.cpp.o -c /Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/task03/main.cpp",
-  "file": "/Users/melodiz/Desktop/some/course_c_plus_23_24/2023_2024_2nd_sem/week8/15-16_sem/task03/main.cpp",
+  "directory": "/Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/build",
+  "command": "/usr/bin/clang++   -g -O0 -Wall -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/task03.dir/task03/main.cpp.o -c /Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/task03/main.cpp",
+  "file": "/Users/melodiz/code/hse_seminars_cpp/week8/15-16_sem/task03/main.cpp",
   "output": "CMakeFiles/task03.dir/task03/main.cpp.o"
 }
 ]
