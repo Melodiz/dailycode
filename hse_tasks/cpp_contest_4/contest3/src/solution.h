@@ -66,7 +66,7 @@ bool compForTasks(Task a, Task b)
     {
         return true;
     }
-    else if (a.getTotalLoad() < b.getTotalLoad())
+    else if (a.getTotalLoad() > b.getTotalLoad())
     {
         return false;
     }
@@ -87,7 +87,8 @@ bool compForTasks(Task a, Task b)
             {
                 return true;
             }
-            return false;
+            else
+                return false;
         }
     }
 }
@@ -120,87 +121,77 @@ int getWorkerLoad(const std::vector<Task>& allTasks, const Worker& worker)
 // task 5
 void addTask(std::vector<Task>& tasks, const Task& newTask, const std::vector<Worker>& workers)
 {
-    tasks.push_back(newTask);
     std::map<std::string, int> NewTaksdata = newTask.workloads;
-
     for (int i = 0; i < workers.size(); i++)
     {
+        std::map<std::string, int> NewTaksdata = newTask.workloads;
         for (std::map<std::string, int>::iterator data = NewTaksdata.begin();
              data != NewTaksdata.end(); data++)
         {
             std::pair<std::string, int> vals;
             vals = *data;
 
-            if (vals.first == workers[i].login)
-                if (workers[i].maxLoad < getWorkerLoad(tasks, workers[i]) + vals.second)
+            if (vals.first == workers[i].login){
+                if (workers[i].maxLoad < getWorkerLoad(tasks, workers[i]) + vals.second){
                     throw std::runtime_error("Overworked");
+                }
+                else
+                {
+                    tasks.push_back(newTask);
+                }
+            }   
         }
     }
 }
 
 // task 6
+// struct OverworkedWorker {
+//     std::string name;
+//     size_t hours;
+// };
 
-struct OverworkedWorker { 
-    std::string name;
-    size_t hours;
-};
-
-bool compForWorkersOverworks(OverworkedWorker a, OverworkedWorker b)
+// bool compForWorkersOverworks(OverworkedWorker a, OverworkedWorker b)
+// {
+//     return a.name <= b.name;
+// }
+bool compForWorkersOverworks(std::vector<std::string>& a, std::vector<std::string>& b)
 {
-    if (a.name > b.name)
-        return true;
-    return false;
+    return a[0]<=b[0];
 }
 
-
-
 void addTaskVerbose(std::vector<Task>& tasks, const Task& newTask, const std::vector<Worker>& workers)
-{    
-    std::vector<OverworkedWorker> ans;
+{
+    // std::vector<OverworkedWorker> ans;
+    std::vector<std::vector<std::string>> ans;
 
     tasks.push_back(newTask);
     std::map<std::string, int> NewTaksdata = newTask.workloads;
-
-    // create a list of such cases
-
-    for (int i = 0; i < workers.size(); i++)
+    // if (max_load < load) {
+    //   error.push_back({login, std::to_string(load - max_load)});
+    // }
+    for (size_t i = 0; i < workers.size(); i++)
     {
-        for (std::map<std::string, int>::iterator data = NewTaksdata.begin();
-             data != NewTaksdata.end(); data++)
+        int val = getWorkerLoad(tasks, workers[i]) - workers[i].maxLoad;
+        if (val > 0)
         {
-            std::pair<std::string, int> vals;
-            vals = *data;
-
-            if (vals.first == workers[i].login)
-            {
-                size_t total_work_of = getWorkerLoad(tasks, workers[i]);
-                if (workers[i].maxLoad < total_work_of + vals.second)
-                {
-                    size_t overwork = size_t(total_work_of + vals.second - workers[i].maxLoad);
-                    OverworkedWorker note{workers[i].login, overwork};
-                    ans.push_back(note);
-                }
-            }
+            ans.push_back({workers[i].login, std::to_string(val)});
         }
     }
-    if (!ans.size()){
+    size_t n = ans.size();
+    if (!n){
         return;
     }
 
-    // sort by logins 
+    // sort by logins
     sort(ans.begin(), ans.end(), compForWorkersOverworks);
     // yeah, I wanna write my own struct and comparetor for that
     // 'cause why not
 
-    // create a message and throw;
     std::string errorMessage = "Overworked: ";
-
-    for (size_t i = 0; i < ans.size(); i++)
-    {
-        errorMessage += ans[i].name + " by " + std::to_string(ans[i].hours);
-        if (i + 1 != ans.size()) {
-        errorMessage += ", ";
+    for (int i = 0; i < n; i++) {
+        errorMessage += ans[i][0] + " by " + ans[i][1];
+        if (i + 1 != n)
+            errorMessage += ", ";
     }
-    
     throw std::runtime_error(errorMessage);
 }
