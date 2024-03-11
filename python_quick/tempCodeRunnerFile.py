@@ -1,8 +1,8 @@
-arr = [3,1,2,4,5]
-
-res = 0
-for i in range(len(arr)-1, 0 -1):
-    print(arr[i])
-
-
-# print(res)
+import sys
+sys.set_int_max_str_digits(248_621_000)
+a = (2**82_589_933-1)
+print('passed')
+file = open("prime_number", "w")
+file.write(str(a))
+file.close()
+print('end')
