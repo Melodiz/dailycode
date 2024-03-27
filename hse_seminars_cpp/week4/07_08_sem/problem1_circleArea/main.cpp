@@ -6,7 +6,7 @@
 ///
 /// TASK DESCRIPTION
 ///
-/// Write a function `double circleArea(double radius)` that calculates and 
+/// Write a function `double circleArea(double radius)` that calculates and
 /// returns the area of a circle given its radius.
 ///
 ///////////////////////////////////////////////////////////////////////////////
@@ -14,5 +14,19 @@
 #include <iostream>
 #include <cmath>
 
-int main() {
+double circleArea(double radius);
+
+int main()
+{
+    using namespace std;
+    double radius;
+    cin >> radius;
+
+    cout << circleArea(radius);
+    return 0;
+}
+
+double circleArea(double radius)
+{
+    return M_PI * pow(radius, 2);
 }

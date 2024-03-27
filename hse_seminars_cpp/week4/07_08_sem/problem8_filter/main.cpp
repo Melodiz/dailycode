@@ -19,3 +19,13 @@ int main()
 
     return 0;
 }
+
+bool comp(int value)
+{
+    return value > 0;
+}
+
+int *filter(int *arr, int size, int &newSize, bool (*filterFunc)(int))
+{
+    int* ans[newSize] = {0};
+}

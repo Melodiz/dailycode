@@ -12,10 +12,27 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include "string"
+using namespace std;
+
+int SumOfDigitsRecursiv(int number);
 
 int main()
 {
-    // Your code here
+    int number;
+    cin >> number;
+
+    cout << SumOfDigitsRecursiv(number) << endl;
 
     return 0;
+}
+
+
+int SumOfDigitsRecursiv(int number)
+{
+    if (number < 10)
+    {
+        return number%10;
+    }
+    return SumOfDigitsRecursiv(number/10) + number%10;
 }

@@ -12,10 +12,28 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+using namespace std;
+
+
+void printInt(int number);
+void printDouble(double number);
 
 int main()
 {
-    // Your code here
+    int a = -124;
+    double b = 134.312;
+
+    printInt(a);
+    printDouble(b);
 
     return 0;
+}
+
+void printInt(int number)
+{
+    cout << number << endl;
+}
+
+void printDouble(double number){
+    cout << number << endl;
 }
