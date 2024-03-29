@@ -1,91 +1,164 @@
+#include <algorithm>
 #include <assert.h>
 #include <cmath>
-#include <complex>
 #include <iostream>
+#include <numeric>
 
-class Complex;
-void test(Complex num1, Complex num2);
+// class Rational;
+// void test();
 
-class Complex
+class Rational
 {
 public:
-    double re;
-    double im;
+    int nu;
+    int de;
+    int div;
 
-    Complex(double _reVal = 0.0, double _imVal = 0.0)
+    Rational(int numerator = 0, int denumerator = 1)
     {
-        re = _reVal;
-        im = _imVal;
+        div = std::gcd(numerator, denumerator);
+
+        if (denumerator < 0)
+        {
+            de = -denumerator / div;
+            nu = -numerator / div;
+        }
+        else
+        {
+            de = denumerator / div;
+            nu = numerator / div;
+        }
     }
+    
+    int numerator() const { return nu; }
+    int denominator() const { return de; }
 
-    Complex operator+(Complex const& obj)
+    Rational operator=(const Rational& obj)
     {
-        Complex res;
-        res.re = re + obj.re;
-        res.im = im + obj.im;
-        return res;
-    }
-
-    Complex operator-(Complex const& obj)
-    {
-        Complex res;
-        res.re = re - obj.re;
-        res.im = im - obj.im;
-        return res;
-    }
-
-    Complex operator*(Complex const& obj)
-    {
-        Complex res;
-        res.re = re * obj.re - im * obj.im;
-        res.im = re * obj.im + im * obj.re;
-        return res;
+        nu = obj.nu;
+        de = obj.de;
+        return *this;
     }
 
-    Complex operator/(Complex const& obj)
+    Rational operator=(const int num)
     {
-        Complex res;
-        double denominator = pow(obj.re, 2) + pow(obj.im, 2);
-        res.re = (re * obj.re + im * obj.im) / denominator;
-        res.im = (im * obj.re - re * obj.im) / denominator;
-        return res;
-    }
-    Complex operator+() const
-    {
-        Complex res;
-        res.re = +re;
-        res.im = +im;
-        return res;
+        num = num;
+        de = 1;
+        return *this;
     }
 
-    Complex operator-() const
+    Rational operator+(const Rational& obj) const
     {
-        Complex res;
-        res.re = -re;
-        res.im = -im;
+        return Rational{nu * obj.de + obj.nu * de, de * obj.de};
+    }
+    Rational operator+(const int& obj) const
+    {
+        return Rational{nu + obj * de, de};
+    }
+    Rational operator+=(const Rational& obj)
+    {
+        return *this + obj;
+    }
+
+    Rational operator-(const Rational& obj) const { return -obj + *this; }
+    Rational operator-(const int obj) const
+    {
+        return Rational{nu - obj * de, de};
+    }
+    friend Rational operator-(const int num, const Rational& obj)
+    {
+        return Rational{num * obj.de - obj.nu, obj.de};
+    }
+    Rational operator-=(const Rational& obj)
+    {
+        return *this - obj;
+    }
+
+    Rational operator*(const Rational& obj) const
+    {
+        return Rational{nu * obj.nu, de * obj.de};
+    }
+    Rational operator*(const int obj) const
+    {
+        return Rational{obj * nu, de};
+    }
+    friend Rational operator*(const int num, const Rational& obj)
+    {
+        return Rational{num * obj.nu, obj.de};
+    }
+    Rational operator*=(const Rational& obj)
+    {
+        return *this * obj;
+    }
+
+    Rational operator/(const Rational& obj)
+    {
+        return Rational{nu * obj.de, de * obj.nu};
+    }
+    Rational operator/=(const Rational& obj)
+    {
+        return *this / obj;
+    }
+
+    Rational operator-() const { return Rational{-nu, de}; }
+    Rational operator+() const { return Rational{nu, de}; }
+
+    Rational& operator++()
+    {
+        *this = *this + 1;
+        return *this;
+    }
+
+    Rational operator++(int)
+    {
+        Rational old = *this;
+        operator++();
+        return old;
+    }
+
+    Rational operator--()
+    {
+        *this = *this - 1;
+        return *this;
+    }
+
+    Rational operator--(int)
+    {
+        Rational res = *this;
+        operator--();
         return res;
-    }
-    double Re()
-    {
-        return re;
-    }
-    double Im()
-    {
-        return im;
     }
 };
 
-double abs(const Complex& num)
+bool operator==(const Rational& a, const Rational b)
 {
-    double res = 0;
-    res += sqrt(pow(num.re, 2) + pow(num.im, 2));
-    return res;
+    return (a.nu == b.nu && a.de == b.de);
 }
-bool operator==(const Complex& n1, const Complex& n2)
+bool operator!=(const Rational& a, const Rational b)
 {
-    return (n1.re == n2.re && n1.im == n2.im);
+    return (a.nu != b.nu || a.de != b.de);
 }
-bool operator!=(const Complex& n1, const Complex& n2)
-{
-    return !(n1 == n2);
-}
+
+// int main()
+// {
+//     test();
+//     return 0;
+// }
+
+// void test()
+// {
+//     using namespace std;
+//     Rational n1(35, 14);
+//     Rational n2(135, 10);
+
+//     double a1 = 2.5;
+//     double a2 = 13.5;
+
+//     assert((n1 + n2).nu == 16 && (n1 + n2).de == 1);
+//     // assert((7 + n1).nu == 19 && (n1+7).de == 2);
+//     cout << "Checkpoint #1\n";
+
+//     assert((n1 * n2).nu == 135 && (n1 * n2).de == 4);
+//     assert((7 * n1).nu == 35 && (n1 * 7).de == 2);
+//     cout << "Checkpoint #2\n";
+// }

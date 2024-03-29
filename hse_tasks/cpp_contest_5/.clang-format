@@ -1,4 +1,0 @@
-Language: Cpp
-BasedOnStyle: Google
-PointerAlignment: Left
-AccessModifierOffset: -2
