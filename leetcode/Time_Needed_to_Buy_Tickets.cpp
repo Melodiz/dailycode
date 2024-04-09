@@ -5,7 +5,7 @@ public:
     {
         int i = 0;
         int ans = 0;
-        int n = tickets.size()
+        int n = tickets.size();
         while (tickets[k])
         {
             if (tickets[i%n])
@@ -15,6 +15,6 @@ public:
             }
             i++;
         }
-        return i;
+        return ans;
     }
 };
