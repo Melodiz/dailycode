@@ -27,7 +27,6 @@ public:
         int i = 9;
         while (i > 0)
         {
-            cout << k << " " << num << endl;
             for (size_t j = 0; j < num.length(); j++)
             {
                 if (not k)
