@@ -249,6 +249,7 @@ protected:
     std::map<std::string, Citation*> _citations;
 };
 
+
 void insertInlineAlphabetical(std::string& text, const std::map<std::string, Citation*>& citations)
 {
     std::string keyData = "";

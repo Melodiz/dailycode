@@ -131,20 +131,14 @@ def mat_print(data):
 
 
 data = [
-    [4,  12, -16],
-    [12, 37, -43],
-    [-16, -43, 98]
+    [-2, -2, -8],
+    [-2, 7, 10],
+    [-8, 10, 4]
 ]
 
-data = sub(data, 1, 3, 4)
-data = sub(data, 1, 2, -3)
-data = sub(data, 2, 3, -5)
-data = mult(data, 1, 1/2)
-data = mult(data, 3, 1/3)
-data = to_int(data)
-print(data)
-print('now for identity')
-
+data = sub(data, 1, 2, -1)
+data = sub(data, 1, 3, -4)
+data = sub(data, 2, 3, -2)
 # res = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 # res = row_sub(res, 0, 2, 4)
 # print(mat_print(res))
