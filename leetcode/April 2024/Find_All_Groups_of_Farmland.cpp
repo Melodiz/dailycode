@@ -18,4 +18,16 @@ public:
         }
         return ans;
     }
+    void dfs(vector<vector<int>>& land, vector<vector<int>>& ans, int i, int j)
+    {
+        for (int k = 0; k < min(land.size() - i, land[0].size() - j); k++)
+        {
+            if (land[i + k][j + k] == -1)
+                return;
+            if (land[i + k][j + k] == 0)
+            {
+                ans.push_back({i, j, i+k, j+k});
+            }
+        }
+    }
 };
