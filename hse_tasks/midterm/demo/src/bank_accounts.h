@@ -110,7 +110,7 @@ double Account::getBalance(UnixTS timestamp) const
                 balance -= data[i].amount;
             else
             {
-                if (!(data[i].from == data[i].to) && (data[i].from ==person_id))
+                if (!(data[i].from == data[i].to) && (data[i].from == person_id))
                     balance -= data[i].amount;
                 else if (!(data[i].from == data[i].to) && (data[i].to == person_id))
                     balance += data[i].amount;
@@ -135,23 +135,79 @@ using TransactionContainer = std::set<Transaction>;
 
 TransactionContainer readTransactions(std::ifstream& fileStream)
 {
-    TransactionContainer transactions;
+    // TransactionContainer transactions;
 
-    std::string line;
-    std::getline(fileStream, line);
-    size_t transactionsCount = std::stoul(line);
-    std::getline(fileStream, line);
+    // std::string line;
+    // std::cout << line << "hdwa" << std::endl;
+    // std::getline(fileStream, line);
+    // size_t transactionsCount = std::stoul(line);
+    // std::getline(fileStream, line);
 
-    for (size_t i = 0; i < transactionsCount; ++i)
+    // for (size_t i = 0; i < transactionsCount; ++i)
+    // {
+    //     std::stringstream ss(line);
+    //     std::string field;
+    //     Transaction transaction;
+    //     for (unsigned short i = 0; i < TRANSACTION_COL_N; i++)
+    //     {
+    //         std::cout << line << std::endl;
+    //     }
+    //     // and here;
+    // }
+    file.open("transactions_accounts.csv");
+    bool flag = false;
+    if (!file.is_open())
     {
-        std::stringstream ss(line);
-        std::string field;
-        Transaction transaction;
-        for (unsigned short i = 0; i < TRANSACTION_COL_N; i++)
+        std::cout << "Error opening file" << std::endl;
+    }
+    while (file.good())
+    {
+        std::string line;
+        std::getline(file, line);
+
+        if (line.find("validity_timestamp") != -1)
+            flag = true;
+
+        if (!flag && line.substr(0, line.find(";")) != "id" && line.length() > 10)
         {
             std::cout << line << std::endl;
+
+            std::string _id = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1);
+
+            int _name = std::stoi(line.substr(0, line.find(";")));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            std::string _type = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            std::string _from = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            std::string _to = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            std::string _amount = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            
         }
-        // and here;
+        else if (flag && line.find("validity_timestamp") == -1)
+        {
+            std::string _id = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1);
+
+            std::string _name = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            std::string _timestamp = line.substr(0, line.find(";"));
+            line = line.substr(line.find(";") + 1, line.length());
+
+            std::cout << "id: " << _id << std::endl;
+            std::cout << "name: " << _name << std::endl;
+            std::cout << "timestamp: " << _timestamp << std::endl;
+            std::cout << std::endl;
+        }
     }
 
 
