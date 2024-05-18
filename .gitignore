@@ -2,3 +2,6 @@ projects/hse_streamlit_bi/dataset
 projects/integrpolation/
 stuff/
 /stuff/
+.DS_Store/
+.vscode/
+.DS_Store
