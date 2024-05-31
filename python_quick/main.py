@@ -1,15 +1,12 @@
+from itertools import product
+p1 = [3, 5, 7]
+p2 = [11, 13, 17]
+p3 = [19, 23, 29, 31, 37, 41, 43, 47]
 
+result = []
 
-for i in range(1, 129):
-    count = 0
-    k = i
-    while (i != 1):
-        if (i % 2 == 0):
-            i = i / 2
-        else:
-            i = i + 1
-        count += 1
-    if (k == 2 or k== 4 or k == 8 or k == 16 or k == 32 or k == 64 or k == 128):
-        print(f'{k} -> {count}')
-    if (k == 6 or k == 12 or k == 24 or k == 48 or k == 96): 
-        print(f'{k} -> {count}')
+for i in range(len(p2)):
+    for j in range(len(p1)):
+        result.append(p2[i] * p1[j])
+
+print(len(set(result)))
