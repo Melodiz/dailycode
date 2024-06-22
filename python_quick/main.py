@@ -1,12 +1,21 @@
-from itertools import product
-p1 = [3, 5, 7]
-p2 = [11, 13, 17]
-p3 = [19, 23, 29, 31, 37, 41, 43, 47]
+import sympy as sp
 
-result = []
+# Define the variables
+z, x, y = sp.symbols('z x y')
 
-for i in range(len(p2)):
-    for j in range(len(p1)):
-        result.append(p2[i] * p1[j])
+# Define the polynomials
+f1 = x+y+z -3
+f2 = x**2+y**2+z**2 - 3
+f3 = x**3+y**3+z**3 - 1
 
-print(len(set(result)))
+
+# Create the ideal
+I = [f1, f2, f3]
+
+# Compute the Grobner basis with respect to the lexicographic order
+G = sp.groebner(I, x, y, z, order='lex')
+
+# Print the Grobner basis
+print("Grobner basis:")
+for g in G:
+    print(g)
