@@ -1,0 +1,3 @@
+/Users/melodiz/code/hse_tasks/Exam/build/CMakeFiles/dsba_exam_cpp.dir
+/Users/melodiz/code/hse_tasks/Exam/build/CMakeFiles/edit_cache.dir
+/Users/melodiz/code/hse_tasks/Exam/build/CMakeFiles/rebuild_cache.dir

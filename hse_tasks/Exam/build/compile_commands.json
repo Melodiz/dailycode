@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/melodiz/code/hse_tasks/Exam/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/dsba_exam_cpp.dir/src/main.cpp.o -c /Users/melodiz/code/hse_tasks/Exam/src/main.cpp",
+  "file": "/Users/melodiz/code/hse_tasks/Exam/src/main.cpp",
+  "output": "CMakeFiles/dsba_exam_cpp.dir/src/main.cpp.o"
+}
+]
