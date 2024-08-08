@@ -22,7 +22,7 @@ def explore_room(grid, start_row, start_col, max_row, max_col):
 def main():
     n = int(input())
     grid = [list(input().strip()) for _ in range(n)]
-    start_row, start_col = map(int, input().split())
+    start_row, start_col = map(int, input()).split()
     max_row, max_col = len(grid), len(grid[0])
 
     explore_room(grid, start_row - 1, start_col - 1, max_row, max_col)
