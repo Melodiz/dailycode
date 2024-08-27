@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/melodiz/code/hse_seminars_cpp/09_10_sem/build",
-  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-g++-13   -g -O0 -Wall -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/problem1_sum.dir/problem1_sum/main.cpp.o -c /Users/melodiz/code/hse_seminars_cpp/09_10_sem/problem1_sum/main.cpp",
-  "file": "/Users/melodiz/code/hse_seminars_cpp/09_10_sem/problem1_sum/main.cpp",
-  "output": "CMakeFiles/problem1_sum.dir/problem1_sum/main.cpp.o"
-}
-]
