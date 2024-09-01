@@ -15,7 +15,5 @@ def main():
         print(prediction)
         temperatures.append(prediction)
 
-
-
 if __name__ == "__main__":
     main()
