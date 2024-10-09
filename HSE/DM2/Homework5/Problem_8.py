@@ -3,8 +3,12 @@ from itertools import product
 def nor(x: bool, y: bool) -> bool:
     return not (x or y)
 
+def sheffers_stroke(x: bool, y: bool) -> bool:
+    return not (x and y)
+
 def f(x, y, z):
-    print(f"{x} {y} {z} -> {int(nor(x, y)), int(nor(x, y) or x)}")
+    print(f"{x} {y} {z} -> {int(nor(x, y)), int(sheffers_stroke
+                                            (nor(x, y), x))}")
     return (nor(x, y) or x)
 
 def g(x, y, z, t):
