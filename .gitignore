@@ -6,3 +6,5 @@ stuff/
 .DS_Store
 HSE/hse_seminars_cpp
 **archive
+**__pycache__**
+**temp**
