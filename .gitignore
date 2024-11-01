@@ -8,3 +8,5 @@ HSE/hse_seminars_cpp
 **archive
 **__pycache__**
 **temp**
+**env**
+ML_Trainings
