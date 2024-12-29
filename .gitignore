@@ -8,4 +8,4 @@ HSE/hse_seminars_cpp
 **env**
 stuff/tickets
 legacy_code/sber
-stuff/distribution/*.txt
+stuff/**.txt
