@@ -52,7 +52,7 @@ def simple_spaces_replacer(directory):
                 old_path = os.path.join(root, filename)
                 new_path = os.path.join(root, new_filename)
                 try:
-                    # os.rename(old_path, new_path)
+                    os.rename(old_path, new_path)
                     print(f'Renamed: {filename} -> {new_filename}')
                     count += 1
                 except OSError as e:

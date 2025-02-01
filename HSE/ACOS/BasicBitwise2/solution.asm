@@ -7,8 +7,8 @@ addi t1, zero, 3         # 0x00300313
 slti t2, t0, 16          # 0x0102d293
 lw s1, 0(s0)             # 0x00042483
 add t1, t1, t1           # 0x00931333
-beq t0, t1, 6            # 0x00628463
-j 0x10                   # 0x0100006f
+beq t0, t1, jump1        # 0x00628463
+j jump2                   # 0x0100006f
 auipc t2, 0              # 0x00000397
 addi t2, t2, -4          # 0xffc38393
 jalr t1                  # 0x00038067
