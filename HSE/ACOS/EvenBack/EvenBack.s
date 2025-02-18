@@ -30,9 +30,9 @@ read_loop:
     bnez t4, increment_index # if t4 is not 0, it's odd, skip storing
 
     # Store even integer in array
-    slli t4, t2, 2        # t4 = t2 * 4 (byte offset for storing)
-    add t4, t4, t6        # t4 = address of array[t2]
-    sw t3, 0(t4)          # store t3 at array[t2]
+    slli t7, t2, 2        # t7 = t2 * 4 (byte offset for storing)
+    add t7, t7, t6        # t7 = address of array[t2]
+    sw t3, 0(t7)          # store t3 at array[t2]
     addi t2, t2, 1        # increment even count
 
 increment_index:
@@ -45,9 +45,9 @@ print_even:
 
 print_loop:
     addi t2, t2, -1       # decrement even count
-    slli t4, t2, 2        # t4 = t2 * 4 (byte offset for loading)
-    add t4, t4, t6        # t4 = address of array[t2]
-    lw a0, 0(t4)          # load the even number
+    slli t7, t2, 2        # t7 = t2 * 4 (byte offset for loading)
+    add t7, t7, t6        # t7 = address of array[t2]
+    lw a0, 0(t7)          # load the even number
     li a7, 1              # syscall for print_int
     ecall
 
