@@ -1,69 +1,73 @@
     .data
-newline: .string "\n"
 array:   .space 400     # Allocate space for up to 100 integers (assuming 4 bytes per integer)
 
     .text
     .globl main
 
 main:
-    # Read the number of integers, N
-    li a7, 5              # syscall for read_int
+    # Read N
+    li a7, 5           # syscall 5 - read integer
     ecall
-    mv t0, a0             # store N in t0
-
-    # Initialize index and even count
-    li t1, 0              # t1 will be the index for input
-    li t2, 0              # t2 will count the even numbers
-    li t5, 2              # t5 will hold the value 2 for modulus operation
-    la t6, array          # load the address of array into t6
-
+    mv s0, a0          # s0 = N
+    
+    # Initialize array index
+    li s1, 0           # s1 = current index
+    la s2, array       # s2 = array base address
+    
 read_loop:
-    beq t1, t0, print_even # if index equals N, exit loop
-
-    # Read the next integer
-    li a7, 5              # syscall for read_int
+    beqz s0, read_done # If N == 0, exit loop
+    
+    # Read integer
+    li a7, 5           # syscall 5 - read integer
     ecall
-    mv t3, a0             # store the current integer in t3
-
-    # Check if the integer is even
-    rem t4, t3, t5        # t4 = t3 % 2
-    bnez t4, increment_index # if t4 is not 0, it's odd, skip storing
-
-    # Store even integer in array
-    slli t7, t2, 2        # t7 = t2 * 4 (byte offset for storing)
-    add t7, t7, t6        # t7 = address of array[t2]
-    sw t3, 0(t7)          # store t3 at array[t2]
-    addi t2, t2, 1        # increment even count
-
-increment_index:
-    addi t1, t1, 1        # increment index
+    
+    # Store integer in array
+    sw a0, 0(s2)       # array[index] = input
+    addi s2, s2, 4     # Move to next array element
+    addi s1, s1, 1     # index++
+    addi s0, s0, -1    # N--
+    
     j read_loop
-
-print_even:
-    # Print even numbers in reverse order
-    beqz t2, print_newline # if no even numbers, just print newline
-
+    
+read_done:
+    # Reset array pointer to the end of the array
+    la s2, array       # s2 = array base address
+    slli s3, s1, 2     # s3 = N * 4 (byte offset)
+    add s2, s2, s3     # s2 points to the end of the array
+    addi s2, s2, -4    # Adjust to point to the last element
+    
 print_loop:
-    addi t2, t2, -1       # decrement even count
-    slli t7, t2, 2        # t7 = t2 * 4 (byte offset for loading)
-    add t7, t7, t6        # t7 = address of array[t2]
-    lw a0, 0(t7)          # load the even number
-    li a7, 1              # syscall for print_int
+    beqz s1, print_done # If index == 0, exit loop
+    
+    # Load integer from array
+    lw a0, 0(s2)       # a0 = array[index]
+    
+    # Check if even
+    li t0, 2
+    rem t1, a0, t0     # t1 = a0 % 2
+    bnez t1, skip_print # If not even, skip printing
+    
+    # Print even integer
+    li a7, 1           # syscall 1 - print integer
     ecall
-
-    # Print newline after each number
-    li a7, 4              # syscall for print_string
-    la a0, newline        # load address of newline
+    
+    # Print newline
+    li a7, 11          # syscall 11 - print character
+    li a0, 10          # ASCII code for newline
     ecall
-
-    bnez t2, print_loop   # if t2 is not zero, continue loop
-
-print_newline:
-    # Print a newline at the end
-    li a7, 4              # syscall for print_string
-    la a0, newline        # load address of newline
+    
+skip_print:
+    addi s2, s2, -4    # Move to previous array element
+    addi s1, s1, -1    # index--
+    
+    j print_loop
+    
+print_done:
+    # Print final newline (required even for empty output)
+    li a7, 11          # syscall 11 - print character
+    li a0, 10          # ASCII code for newline
     ecall
-
+    
     # Exit program
-    li a7, 10             # syscall for exit
+    li a7, 10          # syscall 10 - exit
     ecall
