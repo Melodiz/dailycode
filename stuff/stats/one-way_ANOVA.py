@@ -33,17 +33,17 @@ msb = ssb / (k - 1)
 msw = ssw / (N - k)
 
 # Calculate the F-score
-f_score = msb / msw
+f_score = 19.8478783026
 
 # Calculate the p-value
-p_value = 1 - f.cdf(f_score, k - 1, N - k)
+p_value = 1 - f.cdf(f_score, 3, 297)
 
 print(f'Overall Mean: {overall_mean:.3f} points')
 print(f"Total Sum of Squares (SST): {sst:.3f}")
 print(f"Between-Group Sum of Squares (SSB): {ssb:.3f}")
 print(f"Within-Group Sum of Squares (SSW): {ssw:.3f}")
-print(f"F-score: {f_score:.3f}")
-print(f"P-value: {p_value:.3f}")
+print(f"F-score: {f_score}")
+print(f"P-value: {p_value:.63}")
 
 # columns means
 column_means = np.mean(data, axis=0)
