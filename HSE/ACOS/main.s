@@ -1,97 +1,147 @@
 .data
-    # Constants
-    four: .double 4.0
-    one: .double 1.0
-    two: .double 2.0
-    ten: .double 10.0
-    neg_one: .double -1.0
-    
-    # Output format
-    newline: .asciz "\n"
-
+array: .word
 .text
-.globl main
+
+.macro print_int (%x)
+   li a7, 1
+   mv a0, %x
+   ecall
+.end_macro
+
+.macro print_imm_int (%x)
+   li a7, 1
+   li a0, %x
+   ecall
+.end_macro
+
+.macro read_int(%x)
+   li a7, 5
+   ecall
+   mv %x, a0
+.end_macro
+
+.macro print_str (%x)
+   .data
+str:
+   .asciz %x
+   .text
+   li a7, 4
+   la a0, str
+   ecall
+.end_macro
+
+.macro print_char(%x)
+   li a7, 11
+   li a0, %x
+   ecall
+.end_macro
+
+.macro newline
+   print_char('\n')
+.end_macro
+
+.macro cmp1 
+  	ble a0, a1, leq
+    	li a0, 0
+    	j done_cmp1
+leq:
+    	li a0, 1
+done_cmp1:
+.end_macro
+
+.macro cmp2
+  	li s9, 10
+  	rem a0, a0, s9
+  	rem a1, a1, s9
+  	bge a0, a1, greater
+less_or_equal1:
+    	li a0, 0
+    	j done_cmp2
+greater:
+    	li a0, 1
+done_cmp2:
+.end_macro
+
+
+.macro swap_two(%x, %y)
+  	lw s0, (%x)
+  	lw s1, 0(%y)
+  	mv s2, s0
+  	sw s1, 0(%x)
+  	sw s2, 0(%y)
+.end_macro
+
 main:
-    # Read input N (number of decimal places)
-    li a7, 5              # System call for reading integer
-    ecall
-    mv s0, a0             # Store N in s0
-    
-    # Initialize variables for Leibniz formula
-    la t1, four
-    fld ft0, 0(t1)        # ft0 = 4.0 (final multiplier)
-    la t1, one
-    fld ft1, 0(t1)        # ft1 = 1.0 (numerator)
-    
-    # Initialize sum to 0.0
-    li t0, 0
-    fcvt.d.w ft6, t0      # Convert integer 0 to double
-    
-    la t1, one
-    fld ft2, 0(t1)        # ft2 = 1.0 (first denominator)
-    la t1, two
-    fld ft3, 0(t1)        # ft3 = 2.0 (to increment denominator)
-    la t1, one
-    fld ft5, 0(t1)        # ft5 = 1.0 (sign)
-    
-    # Calculate required iterations based on N
-    # We'll use a fixed number of iterations based on N
-    li t2, 1000           # Base number of iterations
-    mul t2, t2, s0        # Scale by N
-    addi t2, t2, 1000     # Add minimum iterations
-    
-    # Calculate π using Leibniz formula
-    li t1, 0              # Iteration counter
-    
-leibniz_loop:
-    # Check if we've reached max iterations
-    bge t1, t2, leibniz_done
-    addi t1, t1, 1        # Increment counter
-    
-    # Calculate next term: sign * (1/denominator)
-    fdiv.d ft7, ft1, ft2  # 1/denominator
-    fmul.d ft7, ft7, ft5  # sign * (1/denominator)
-    
-    # Add term to sum
-    fadd.d ft6, ft6, ft7  # sum += term
-    
-    # Update for next iteration
-    fadd.d ft2, ft2, ft3  # Increment denominator by 2
-    la t5, neg_one
-    fld ft4, 0(t5)        # ft4 = -1.0
-    fmul.d ft5, ft5, ft4  # Flip sign
-    
-    j leibniz_loop
-    
-leibniz_done:
-    # Multiply sum by 4 to get π
-    fmul.d ft6, ft6, ft0  # π = 4 * sum
-    
-    # Calculate 10^N for truncation
-    la t1, ten
-    fld ft7, 0(t1)        # ft7 = 10.0
-    la t1, one
-    fld ft8, 0(t1)        # ft8 = 1.0 (will be 10^N)
-    li t1, 0              # Counter
-trunc_power_loop:
-    beq t1, s0, trunc_power_done
-    fmul.d ft8, ft8, ft7  # Multiply by 10
-    addi t1, t1, 1        # Increment counter
-    j trunc_power_loop
-trunc_power_done:
-    # ft8 now contains 10^N
-    
-    # Truncate to N decimal places
-    fmul.d ft9, ft6, ft8  # π * 10^N
-    fcvt.w.d t3, ft9      # Convert to integer (truncating)
-    fcvt.d.w ft9, t3      # Convert back to double
-    fdiv.d ft6, ft9, ft8  # Truncated π = int(π * 10^N) / 10^N
-    
-    # Print result with N decimal places
-    fmv.d fa0, ft6        # Move result to fa0 for printing
-    li a7, 3              # System call for printing double
-    ecall
-    
-    # Exit program
-    li a7, 10             # System call for exit
-    ecall
+	read_int(t0)
+	read_int(s11)
+	mv t1, t0
+	la t6, array
+	j read_loop
+
+read_loop:
+	beqz t1, middle
+	read_int(t2)
+	sw t2, 0(t6)
+	addi t6, t6, 4
+	addi t1, t1, -1
+	j read_loop
+  
+middle:
+	la t5, array 
+	addi t6, t6, -4
+	mv s6, t6
+	mv t1, t0
+
+bubble_sort:
+	mv t6, s6
+	li s3, 0
+	mv t1, t0
+	la t5, array
+inner_loop:
+	beq t5, t6, pre_sort
+	lw s4, 0(t5)
+	mv s8, t5 
+	lw s5, 4(t5)
+	addi t5, t5, 4
+	mv s10, t5
+	mv a0, s4
+	mv a1, s5
+	jal cmp
+	beqz a0, swap
+	j inner_loop
+
+cmp:
+  	beqz s11, case1
+case2:
+    	cmp2
+    	jr ra
+case1:
+    	cmp1
+    	jr ra
+
+
+pre_sort:
+	beqz s3, pre_output
+	j bubble_sort
+
+swap:
+  	swap_two(s8, s10)
+  	addi s3, s3, 1
+  	j inner_loop
+
+pre_output:
+	la t5, array
+	addi t6, t6, 4
+
+output_loop:
+	beq t5, t6, done
+	lw t2, 0(t5)
+	addi t5, t5, 4
+	addi t1, t1, -1
+	print_int(t2)
+	newline
+	j output_loop
+
+done:
+	li a7, 10
+	ecall
