@@ -1,9 +1,9 @@
 import scipy.stats as stats
 
 X = [
-    [22, 18], 
-    [19, 21], 
-    [13, 27]
+    [47, 7], 
+    [49, 30], 
+    [65, 85]
 ]
 
 # Calculate row sums
