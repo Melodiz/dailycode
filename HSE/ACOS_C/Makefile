@@ -1,0 +1,25 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+TARGET_SERVER = server
+TARGET_CLIENT = client
+SOURCES_SERVER = server.c
+SOURCES_CLIENT = client.c
+
+all: $(TARGET_SERVER) $(TARGET_CLIENT)
+
+$(TARGET_SERVER): $(SOURCES_SERVER)
+	$(CC) $(CFLAGS) -o $(TARGET_SERVER) $(SOURCES_SERVER)
+
+$(TARGET_CLIENT): $(SOURCES_CLIENT)
+	$(CC) $(CFLAGS) -o $(TARGET_CLIENT) $(SOURCES_CLIENT)
+
+clean:
+	rm -f $(TARGET_SERVER) $(TARGET_CLIENT)
+
+run-server: $(TARGET_SERVER)
+	./$(TARGET_SERVER)
+
+run-client: $(TARGET_CLIENT)
+	./$(TARGET_CLIENT)
+
+.PHONY: all clean run-server run-client 
