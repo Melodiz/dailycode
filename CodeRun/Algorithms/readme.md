@@ -173,6 +173,7 @@
 * [9010. Тепловые панели](https://coderun.yandex.ru/problem/thermal-panels) [2025-winter_common] - [Solution](Algorithms/Easy/9010_thermal_panels)
 * [9010. Тепловые панели](https://coderun.yandex.ru/problem/thermal-panels) [2025-winter_common] - [Solution](Algorithms/Easy/9010_thermal_panels)
 * [5314. Игра из чулана](https://coderun.yandex.ru/problem/closet_play) - [Solution](Algorithms/Easy/5314_closet_play)
+* [5317. В город на ярмарку](https://coderun.yandex.ru/problem/new-year-fair) - [Solution](Algorithms/Easy/5317_new_year_fair)
 
 ## Medium <a name="algorithms-medium"></a>
 
