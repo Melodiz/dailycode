@@ -15,7 +15,7 @@ def create_solution_files(problem_id, topic_folder, problem_data):
     solution_path = os.path.join(folder_path, "solution.py")
     with open(solution_path, 'w', encoding='utf-8') as f:
         f.write(f"# Solution for {problem_data['problem_link']}\n")
-        f.write(f"# Other solutions: https://github.com/Melodiz/CodeRun\n\n")
+        f.write(f"# Other solutions: https://github.com/Melodiz/dailycode/tree/main/coderun\n\n")
         f.write("def main():\n")
         f.write("    pass\n\n")
         f.write("if __name__ == \"__main__\":\n")
