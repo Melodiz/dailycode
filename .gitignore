@@ -1,4 +1,4 @@
-stuf/
+stuff/
 **.DS_Store**
 **vscode**
 HSE/hse_seminars_cpp
@@ -6,8 +6,4 @@ HSE/hse_seminars_cpp
 **__pycache__**
 **temp**
 **env**
-stuff/tickets
 legacy_code/sber
-stuff/**.txt
-stuff/stats/
-stuff/
