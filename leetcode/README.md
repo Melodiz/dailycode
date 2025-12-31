@@ -33,6 +33,7 @@ To find the solution to a specific task:
 ## Medium <a name="leetcode-medium"></a>
 
 * [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) [Hash Table, String, Sliding Window] - [Solution](Medium/3_longest_substring_without_repeating_characters)
+* [756. Pyramid Transition Matrix](https://leetcode.com/problems/pyramid-transition-matrix/) [Hash Table, String, Backtracking, Bit Manipulation] - [Solution](Medium/756_pyramid_transition_matrix)
 
 
 
