@@ -45,6 +45,7 @@ To find the solution to a specific task:
 * [1975. Maximum Matrix Sum](https://leetcode.com/problems/maximum-matrix-sum/) [Array, Greedy, Matrix] - [Solution](Medium/1975_maximum_matrix_sum)
 * [1441. Build an Array With Stack Operations](https://leetcode.com/problems/build-an-array-with-stack-operations/) [Array, Stack, Simulation] - [Solution](Medium/1441_build_an_array_with_stack_operations)
 * [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) [Array, Math, Stack] - [Solution](Medium/150_evaluate_reverse_polish_notation)
+* [636. Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/) [Array, Stack] - [Solution](Medium/636_exclusive_time_of_functions)
 
 
 
