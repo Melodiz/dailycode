@@ -10,4 +10,5 @@
 * [1470. Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/) [Array] - [Solution](/Users/melodiz/code/leetcode/Easy/1470_shuffle_the_array)
 * [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) [Array] - [Solution](/Users/melodiz/code/leetcode/Easy/485_max_consecutive_ones)
 * [645. Set Mismatch](https://leetcode.com/problems/set-mismatch/) [Array, Hash Table, Bit Manipulation, Sorting] - [Solution](/Users/melodiz/code/leetcode/Easy/645_set_mismatch)
+* [1365. How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) [Array, Hash Table, Sorting, Counting Sort] - [Solution](/Users/melodiz/code/leetcode/Easy/1365_how_many_numbers_are_smaller_than_the_current_number)
 
