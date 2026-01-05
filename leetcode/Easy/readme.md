@@ -12,4 +12,5 @@
 * [645. Set Mismatch](https://leetcode.com/problems/set-mismatch/) [Array, Hash Table, Bit Manipulation, Sorting] - [Solution](/Users/melodiz/code/leetcode/Easy/645_set_mismatch)
 * [1365. How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) [Array, Hash Table, Sorting, Counting Sort] - [Solution](/Users/melodiz/code/leetcode/Easy/1365_how_many_numbers_are_smaller_than_the_current_number)
 * [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) [Array, Hash Table] - [Solution](/Users/melodiz/code/leetcode/Easy/448_find_all_numbers_disappeared_in_an_array)
+* [1475. Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) [Array, Stack, Monotonic Stack] - [Solution](/Users/melodiz/code/leetcode/Easy/1475_final_prices_with_a_special_discount_in_a_shop)
 
