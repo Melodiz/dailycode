@@ -6,5 +6,6 @@
 * [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/) [Math] - [Solution](/Users/melodiz/code/leetcode/Medium/7_reverse_integer)
 * [756. Pyramid Transition Matrix](https://leetcode.com/problems/pyramid-transition-matrix/) [Hash Table, String, Backtracking, Bit Manipulation] - [Solution](/Users/melodiz/code/leetcode/Medium/756_pyramid_transition_matrix)
 * [1975. Maximum Matrix Sum](https://leetcode.com/problems/maximum-matrix-sum/) [Array, Greedy, Matrix] - [Solution](/Users/melodiz/code/leetcode/Medium/1975_maximum_matrix_sum)
+* [1441. Build an Array With Stack Operations](https://leetcode.com/problems/build-an-array-with-stack-operations/) [Array, Stack, Simulation] - [Solution](/Users/melodiz/code/leetcode/Medium/1441_build_an_array_with_stack_operations)
 
 
