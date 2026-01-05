@@ -11,4 +11,5 @@
 * [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) [Array] - [Solution](/Users/melodiz/code/leetcode/Easy/485_max_consecutive_ones)
 * [645. Set Mismatch](https://leetcode.com/problems/set-mismatch/) [Array, Hash Table, Bit Manipulation, Sorting] - [Solution](/Users/melodiz/code/leetcode/Easy/645_set_mismatch)
 * [1365. How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) [Array, Hash Table, Sorting, Counting Sort] - [Solution](/Users/melodiz/code/leetcode/Easy/1365_how_many_numbers_are_smaller_than_the_current_number)
+* [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) [Array, Hash Table] - [Solution](/Users/melodiz/code/leetcode/Easy/448_find_all_numbers_disappeared_in_an_array)
 
