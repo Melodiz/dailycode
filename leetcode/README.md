@@ -29,6 +29,9 @@ To find the solution to a specific task:
 * [3074. Apple Redistribution into Boxes](https://leetcode.com/problems/apple-redistribution-into-boxes/) [Array, Greedy, Sorting] - [Solution](Easy/3074_apple_redistribution_into_boxes)
 * [66. Plus One](https://leetcode.com/problems/plus-one/) [Array, Math] - [Solution](Easy/66_plus_one)
 * [961. N-Repeated Element in Size 2N Array](https://leetcode.com/problems/n-repeated-element-in-size-2n-array/) [Array, Hash Table] - [Solution](Easy/961_n_repeated_element_in_size_2n_array)
+* [1929. Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/) [Array, Simulation] - [Solution](Easy/1929_concatenation_of_array)
+* [1470. Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/) [Array] - [Solution](Easy/1470_shuffle_the_array)
+* [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) [Array] - [Solution](Easy/485_max_consecutive_ones)
 
 
 
