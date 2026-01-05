@@ -5,5 +5,6 @@
 * [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) [Hash Table, String, Sliding Window] - [Solution](/Users/melodiz/code/CodeRun/leetcode/Medium/3_longest_substring_without_repeating_characters)
 * [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/) [Math] - [Solution](/Users/melodiz/code/leetcode/Medium/7_reverse_integer)
 * [756. Pyramid Transition Matrix](https://leetcode.com/problems/pyramid-transition-matrix/) [Hash Table, String, Backtracking, Bit Manipulation] - [Solution](/Users/melodiz/code/leetcode/Medium/756_pyramid_transition_matrix)
+* [1975. Maximum Matrix Sum](https://leetcode.com/problems/maximum-matrix-sum/) [Array, Greedy, Matrix] - [Solution](/Users/melodiz/code/leetcode/Medium/1975_maximum_matrix_sum)
 
 
