@@ -37,6 +37,7 @@ To find the solution to a specific task:
 * [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) [Array, Hash Table] - [Solution](Easy/448_find_all_numbers_disappeared_in_an_array)
 * [1475. Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) [Array, Stack, Monotonic Stack] - [Solution](Easy/1475_final_prices_with_a_special_discount_in_a_shop)
 * [1700. Number of Students Unable to Eat Lunch](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/) [Array, Stack, Queue, Simulation] - [Solution](Easy/1700_number_of_students_unable_to_eat_lunch)
+* [2073. Time Needed to Buy Tickets](https://leetcode.com/problems/time-needed-to-buy-tickets/) [Array, Queue, Simulation] - [Solution](Easy/2073_time_needed_to_buy_tickets)
 
 
 
