@@ -2,7 +2,7 @@ import os
 from leetcode_check_utils import validate_problem_folder, validate_global_readme, validate_local_readme
 
 
-def create_solution_files(problem_slug, topic_folder, problem_data):
+def create_solution_files(problem_slug, topic_folder, problem_data, allow_existing=False):
     """
     Create problem folder with README and solution template
     
@@ -10,21 +10,33 @@ def create_solution_files(problem_slug, topic_folder, problem_data):
         problem_slug: The problem slug from URL
         topic_folder: Target folder (e.g., 'leetcode/Easy')
         problem_data: Extracted problem data
+        allow_existing: If True, allow adding to existing folder
     """
     # Create folder name: number_slug
     folder_name = f"{problem_data['title_num']}_{problem_slug.replace('-', '_')}"
     folder_path = os.path.join(topic_folder, folder_name)
     
-    validate_problem_folder(folder_path)
-    os.makedirs(folder_path)
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        # Create README with problem description only for new folders
+        readme_path = os.path.join(folder_path, "readme.md")
+        with open(readme_path, 'w', encoding='utf-8') as f:
+            f.write(problem_data['description_text'])
+        solution_path = os.path.join(folder_path, "solution.py")
+    else:
+        if not allow_existing:
+            validate_problem_folder(folder_path)
+        
+        # Find the next solution index
+        if not os.path.exists(os.path.join(folder_path, "solution.py")):
+            solution_path = os.path.join(folder_path, "solution.py")
+        else:
+            idx = 2
+            while os.path.exists(os.path.join(folder_path, f"solution_{idx}.py")):
+                idx += 1
+            solution_path = os.path.join(folder_path, f"solution_{idx}.py")
     
-    # Create README with problem description
-    readme_path = os.path.join(folder_path, "readme.md")
-    with open(readme_path, 'w', encoding='utf-8') as f:
-        f.write(problem_data['description_text'])
-    
-    # Create solution.py with template
-    solution_path = os.path.join(folder_path, "solution.py")
+    # Create solution file with template
     with open(solution_path, 'w', encoding='utf-8') as f:
         f.write(f"# Solution for {problem_data['problem_link']}\n")
         f.write(f"# Other solutions: https://github.com/Melodiz/dailycode/tree/main/leetcode\n\n")

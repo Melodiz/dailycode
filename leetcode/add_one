@@ -2,8 +2,9 @@
 """
 Simple wrapper for adding LeetCode problems
 
-Usage: ./add_one <problem-slug>
+Usage: ./add_one <problem-slug> [-r]
 Example: ./add_one count-negative-numbers-in-a-sorted-matrix
+         ./add_one count-negative-numbers-in-a-sorted-matrix -r
 """
 
 import sys
