@@ -42,8 +42,9 @@ def create_solution_files(problem_slug, topic_folder, problem_data):
             f.write("    def solve(self):\n")
             f.write("        pass\n\n")
         
-        # Get the method name from the code template
+        # Get the method name and arg count from the code template
         method_name = "solve"  # default
+        arg_count = 1
         if problem_data.get('python_code'):
             import re
             # Find 'class Solution:' then the first 'def' after it (excluding __init__)
@@ -58,12 +59,26 @@ def create_solution_files(problem_slug, topic_folder, problem_data):
                         if not method.startswith('__'):
                             method_name = method
                             break
+            
+            # Determine number of arguments
+            match = re.search(fr'def {method_name}\(self,?\s*([^)]*)\)', problem_data['python_code'])
+            if match:
+                args_str = match.group(1).strip()
+                if args_str:
+                    arg_count = 1
+                    depth = 0
+                    for char in args_str:
+                        if char in '([{': depth += 1
+                        elif char in ')]}': depth -= 1
+                        elif char == ',' and depth == 0:
+                            arg_count += 1
         
         # Add main function with active test cases
         f.write("def run_tests():\n")
         f.write("    solution = Solution()\n")
+        f.write("    passed, failed = 0, 0\n")
         f.write("    \n")
-        f.write("    # Test cases: (input_args, expected_output, test_name)\n")
+        f.write("    # Test cases: (input_args, expected_output)\n")
         f.write("    test_cases = [\n")
         
         # Add parsed test cases if available
@@ -74,34 +89,38 @@ def create_solution_files(problem_slug, topic_folder, problem_data):
                 test_output = test_case.get('output', '')
                 
                 if test_input and test_input != 'See problem description':
-                    # Format: (input_args, expected_output, test_name)
+                    # Format: (input_args, expected_output)
                     if test_output != 'See problem description' and test_output:
-                        f.write(f"        ({test_input}, {test_output}, \"Example {i}\"),\n")
+                        f.write(f"        ({test_input}, {test_output}),\n")
                     else:
                         # Add placeholder for expected output - user can fill in from problem description
-                        f.write(f"        ({test_input}, None, \"Example {i}\"),  # TODO: Add expected output\n")
+                        f.write(f"        ({test_input}, None),  # TODO: Add expected output\n")
         
         f.write("    ]\n")
         f.write("    \n")
-        f.write("    for test_input, expected, name in test_cases:\n")
+        f.write("    for test_input, expected in test_cases:\n")
         f.write("        try:\n")
-        f.write(f"            result = solution.{method_name}(test_input)\n")
+        if arg_count > 1:
+            f.write(f"            result = solution.{method_name}(*test_input)\n")
+        else:
+            f.write(f"            result = solution.{method_name}(test_input)\n")
         f.write("            \n")
         f.write("            if expected is not None:\n")
-        f.write("                status = \"✓ PASS\" if result == expected else \"✗ FAIL\"\n")
-        f.write("                print(f\"{name}: {status}\")\n")
-        f.write("                print(f\"  Input:    {test_input}\")\n")
-        f.write("                print(f\"  Expected: {expected}\")\n")
-        f.write("                print(f\"  Got:      {result}\")\n")
+        f.write("                if result == expected:\n")
+        f.write("                    passed += 1\n")
+        f.write("                else:\n")
+        f.write("                    failed += 1\n")
+        f.write("                    print(f\"✗ FAIL: Input={test_input}, Expected={expected}, Got={result}\")\n")
         f.write("            else:\n")
-        f.write("                print(f\"{name}:\")\n")
-        f.write("                print(f\"  Input:  {test_input}\")\n")
-        f.write("                print(f\"  Output: {result}\")\n")
+        f.write("                print(f\"Output: {result} (Input: {test_input})\")\n")
         f.write("        except Exception as e:\n")
-        f.write("            print(f\"{name}: ✗ ERROR\")\n")
-        f.write("            print(f\"  Input: {test_input}\")\n")
-        f.write("            print(f\"  Error: {e}\")\n")
-        f.write("        print()\n")
+        f.write("            failed += 1\n")
+        f.write("            print(f\"✗ ERROR: Input={test_input}, Error={e}\")\n")
+        f.write("    \n")
+        f.write("    if failed == 0 and passed > 0:\n")
+        f.write("        print(\"OK\")\n")
+        f.write("    elif passed == 0 and failed == 0:\n")
+        f.write("        print(\"No test cases to run\")\n")
         f.write("\n")
         f.write("if __name__ == \"__main__\":\n")
         f.write("    run_tests()\n")

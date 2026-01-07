@@ -151,13 +151,14 @@ def clean_html_content(html_content):
     return content.strip()
 
 
-def parse_test_cases(example_testcases, sample_test_case):
+def parse_test_cases(example_testcases, html_content, python_code):
     """
     Parse test cases from LeetCode format
     
     Args:
-        example_testcases: Example test cases string
-        sample_test_case: Sample test case string
+        example_testcases: Example test cases string from GraphQL
+        html_content: Raw HTML content to extract expected outputs
+        python_code: Python code template to determine number of arguments
     
     Returns:
         list: List of test case dictionaries
@@ -167,15 +168,61 @@ def parse_test_cases(example_testcases, sample_test_case):
     if not example_testcases:
         return test_cases
     
-    # Split test cases by newline (LeetCode format)
-    cases = example_testcases.strip().split('\n')
+    # Determine number of arguments from python_code
+    arg_count = 1
+    if python_code:
+        match = re.search(r'def \w+\(self,?\s*([^)]*)\)', python_code)
+        if match:
+            args_str = match.group(1).strip()
+            if args_str:
+                # Count arguments by counting commas at top level
+                arg_count = 1
+                depth = 0
+                for char in args_str:
+                    if char in '([{': depth += 1
+                    elif char in ')]}': depth -= 1
+                    elif char == ',' and depth == 0:
+                        arg_count += 1
     
-    for i, case in enumerate(cases):
-        if case.strip():
-            test_cases.append({
-                'input': case.strip(),
-                'output': 'See problem description'  # LeetCode doesn't always provide expected output
-            })
+    # Split test cases by newline (LeetCode format)
+    lines = [line.strip() for line in example_testcases.strip().split('\n') if line.strip()]
+    
+    # Group lines by arg_count
+    input_groups = []
+    for i in range(0, len(lines), arg_count):
+        group = lines[i:i+arg_count]
+        if len(group) == arg_count:
+            # Clean up each arg in group (convert JSON-style to Python-style)
+            cleaned_group = []
+            for arg in group:
+                # Replace boolean and null values
+                arg = arg.replace('true', 'True').replace('false', 'False').replace('null', 'None')
+                cleaned_group.append(arg)
+            
+            if arg_count > 1:
+                input_groups.append(f"({', '.join(cleaned_group)})")
+            else:
+                input_groups.append(cleaned_group[0])
+    
+    # Try to extract outputs from HTML
+    outputs = re.findall(r'<strong>Output:</strong>\s*(.*?)\s*(?:<\/pre>|<strong>Explanation:</strong>|<p>|<strong>|\Z)', html_content, re.DOTALL)
+    clean_outputs = []
+    for out in outputs:
+        # Remove HTML tags and clean up
+        out = re.sub(r'<[^>]+>', '', out).strip()
+        out = out.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&').replace('&quot;', '"').replace('&#39;', "'").replace('&nbsp;', ' ')
+        # LeetCode sometimes uses "null", "true", "false" in HTML but they should be Python-style
+        if out.lower() == 'true': out = 'True'
+        elif out.lower() == 'false': out = 'False'
+        elif out.lower() == 'null': out = 'None'
+        clean_outputs.append(out)
+    
+    for i, input_val in enumerate(input_groups):
+        output_val = clean_outputs[i] if i < len(clean_outputs) else 'See problem description'
+        test_cases.append({
+            'input': input_val,
+            'output': output_val
+        })
     
     return test_cases
 
@@ -209,11 +256,6 @@ def extract_problem_data(problem_data):
     topic_tags = problem_data.get('topicTags', [])
     tags = [tag['name'] for tag in topic_tags]
     
-    # Extract test cases
-    example_testcases = problem_data.get('exampleTestcases', '')
-    sample_test_case = problem_data.get('sampleTestCase', '')
-    test_cases = parse_test_cases(example_testcases, sample_test_case)
-    
     # Extract Python code template
     code_snippets = problem_data.get('codeSnippets', [])
     python_code = ""
@@ -221,6 +263,11 @@ def extract_problem_data(problem_data):
         if snippet['langSlug'] == 'python3':
             python_code = snippet['code']
             break
+    
+    # Extract test cases
+    example_testcases = problem_data.get('exampleTestcases', '')
+    sample_test_case = problem_data.get('sampleTestCase', '')
+    test_cases = parse_test_cases(example_testcases, raw_content, python_code)
     
     # Extract hints
     hints = problem_data.get('hints', [])

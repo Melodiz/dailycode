@@ -15,4 +15,6 @@
 * [1475. Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/) [Array, Stack, Monotonic Stack] - [Solution](/Users/melodiz/code/leetcode/Easy/1475_final_prices_with_a_special_discount_in_a_shop)
 * [1700. Number of Students Unable to Eat Lunch](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/) [Array, Stack, Queue, Simulation] - [Solution](/Users/melodiz/code/leetcode/Easy/1700_number_of_students_unable_to_eat_lunch)
 * [2073. Time Needed to Buy Tickets](https://leetcode.com/problems/time-needed-to-buy-tickets/) [Array, Queue, Simulation] - [Solution](/Users/melodiz/code/leetcode/Easy/2073_time_needed_to_buy_tickets)
+* [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Stack, Design, Queue] - [Solution](/Users/melodiz/code/leetcode/Easy/232_implement_queue_using_stacks)
+* [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Stack, Design, Queue] - [Solution](/Users/melodiz/code/leetcode/Easy/232_implement_queue_using_stacks)
 
