@@ -40,6 +40,7 @@ To find the solution to a specific task:
 * [2073. Time Needed to Buy Tickets](https://leetcode.com/problems/time-needed-to-buy-tickets/) [Array, Queue, Simulation] - [Solution](Easy/2073_time_needed_to_buy_tickets)
 * [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Stack, Design, Queue] - [Solution](Easy/232_implement_queue_using_stacks)
 * [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Stack, Design, Queue] - [Solution](Easy/232_implement_queue_using_stacks)
+* [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) [Array, Heap (Priority Queue)] - [Solution](Easy/1046_last_stone_weight)
 
 
 
