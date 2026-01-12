@@ -54,6 +54,7 @@ To find the solution to a specific task:
 * [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) [Array, Math, Stack] - [Solution](Medium/150_evaluate_reverse_polish_notation)
 * [636. Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/) [Array, Stack] - [Solution](Medium/636_exclusive_time_of_functions)
 * [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) [Array, Stack, Monotonic Stack] - [Solution](Medium/739_daily_temperatures)
+* [373. Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/) [Array, Heap (Priority Queue)] - [Solution](Medium/373_find_k_pairs_with_smallest_sums)
 
 
 
