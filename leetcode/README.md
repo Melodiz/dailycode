@@ -41,6 +41,7 @@ To find the solution to a specific task:
 * [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Stack, Design, Queue] - [Solution](Easy/232_implement_queue_using_stacks)
 * [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Stack, Design, Queue] - [Solution](Easy/232_implement_queue_using_stacks)
 * [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) [Array, Heap (Priority Queue)] - [Solution](Easy/1046_last_stone_weight)
+* [1266. Minimum Time Visiting All Points](https://leetcode.com/problems/minimum-time-visiting-all-points/) [Array, Math, Geometry] - [Solution](Easy/1266_minimum_time_visiting_all_points)
 
 
 
