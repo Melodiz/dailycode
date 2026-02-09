@@ -20,4 +20,5 @@
 * [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) [Array, Heap (Priority Queue)] - [Solution](/Users/melodiz/code/leetcode/Easy/1046_last_stone_weight)
 * [1266. Minimum Time Visiting All Points](https://leetcode.com/problems/minimum-time-visiting-all-points/) [Array, Math, Geometry] - [Solution](/Users/melodiz/code/leetcode/Easy/1266_minimum_time_visiting_all_points)
 * [520. Detect Capital](https://leetcode.com/problems/detect-capital/) [String] - [Solution](/Users/melodiz/code/leetcode/Easy/520_detect_capital)
+* [482. License Key Formatting](https://leetcode.com/problems/license-key-formatting/) [String] - [Solution](/Users/melodiz/code/leetcode/Easy/482_license_key_formatting)
 
