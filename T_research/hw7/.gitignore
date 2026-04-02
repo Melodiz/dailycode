@@ -1,0 +1,11 @@
+# Per-run plots (reproducible from code + CSVs)
+results/*/*seed*/
+results/old/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+results/*/*.png
