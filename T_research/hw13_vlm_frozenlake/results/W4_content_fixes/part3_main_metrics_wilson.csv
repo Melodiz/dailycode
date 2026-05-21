@@ -1,0 +1,6 @@
+condition,episodes,success_rate,success_wilson_95ci,mean_steps,mean_steps_bootstrap_95ci,hole_rate,hole_wilson_95ci,truncation_rate
+reactive_vlm,30,0.0000,"[0.000, 0.114]",22.50,"[9.40, 38.47]",0.8000,"[0.627, 0.905]",0.2000
+lookahead_zeroshot_vlm,30,0.0000,"[0.000, 0.114]",22.50,"[9.40, 38.47]",0.8000,"[0.627, 0.905]",0.2000
+lookahead_sft_image_text,30,0.1667,"[0.073, 0.336]",59.03,"[44.20, 73.77]",0.3000,"[0.167, 0.479]",0.5333
+lookahead_sft_image_only,30,0.1000,"[0.035, 0.256]",17.40,"[8.33, 29.47]",0.8000,"[0.627, 0.905]",0.1000
+lookahead_gt,30,0.2000,"[0.095, 0.373]",82.80,"[68.47, 94.27]",0.0000,"[0.000, 0.114]",0.8000

@@ -1,0 +1,4 @@
+| condition | truncation_episodes | no_selected_model_error | with_selected_model_errors |
+| --- | --- | --- | --- |
+| lookahead_sft_image_text | 16 | 9 | 7 |
+| lookahead_sft_image_only | 3 | 3 | 0 |

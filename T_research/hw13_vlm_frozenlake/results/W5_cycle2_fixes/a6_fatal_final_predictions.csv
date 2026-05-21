@@ -1,0 +1,4 @@
+condition,fatal_final_prediction,count
+lookahead_sft_image_text,predicted_goal_true_hole,8
+lookahead_sft_image_text,predicted_safe_true_hole,1
+lookahead_sft_image_only,predicted_safe_true_hole,24
